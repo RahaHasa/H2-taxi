@@ -1,0 +1,83 @@
+{
+  "expo": {
+    "name": "H2-Taxi",
+    "slug": "H2-Taxi",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Приложению необходим доступ к местоположению для отслеживания маршрута и мониторинга вождения",
+        "NSLocationAlwaysUsageDescription": "Приложению необходим доступ к местоположению для отслеживания маршрута и мониторинга вождения в фоновом режиме",
+        "NSMotionUsageDescription": "Приложению необходим доступ к датчикам для мониторинга стиля вождения",
+        "UIBackgroundModes": [
+          "location",
+          "fetch",
+          "remote-notification"
+        ]
+      },
+      "bundleIdentifier": "com.h2taxi.app",
+      "config": {
+        "googleMapsApiKey": "AIzaSyCjCVqRf9irHQUmwgKCOt165FxaHCtmrVo"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "RECEIVE_BOOT_COMPLETED",
+        "FOREGROUND_SERVICE",
+        "POST_NOTIFICATIONS"
+      ],
+      "package": "com.h2taxi.app",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyCjCVqRf9irHQUmwgKCOt165FxaHCtmrVo"
+        }
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow H2-Taxi to use your location for route tracking and driving monitoring."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/notification-icon.png",
+          "color": "#ffffff",
+          "sounds": ["./assets/sounds/notification.wav"]
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
